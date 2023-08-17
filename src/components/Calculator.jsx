@@ -1,4 +1,3 @@
-/* eslint-disable import/no-duplicates */
 import React from 'react';
 import { useState } from 'react';
 import CalculatorButton from './Button';
