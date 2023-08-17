@@ -1,10 +1,9 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
-function CalculatorButton({ label }) {
+function CalculatorButton({ label, onClick }) {
   return (
-    <button type="button">
+    <button type="button" onClick={onClick}>
       {label}
     </button>
   );
@@ -12,6 +11,7 @@ function CalculatorButton({ label }) {
 
 CalculatorButton.propTypes = {
   label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default CalculatorButton;
