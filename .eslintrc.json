@@ -30,8 +30,6 @@
     ],
     "ignorePatterns": [
       "dist/",
-      "build/",
-      "Button.jsx",
-      "Quotes.jsx"
+      "build/"
     ]
   }
