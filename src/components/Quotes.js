@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 import './Quotes.css';
+import PropTypes from 'prop-types';
 
 function Quotes({ category }) {
   const [data, setData] = useState([]);
@@ -12,47 +14,57 @@ function Quotes({ category }) {
     axios.get('https://api.api-ninjas.com/v1/quotes?category=knowledge', {
       headers: { 'X-Api-Key': apiKey },
     })
-    .then((response) => {
-      setData(response.data);
-      setLoad(false);
-    })
-    .catch((error) => {
-      setError(error.message);
-      setLoad(false);
-    });
+      .then((response) => {
+        setData(response.data);
+        setLoad(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoad(false);
+      });
   }, []);
 
   if (loadState === true) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   if (error) {
     return (
       <div>
-        Error: {error}
+        Error:
+        {' '}
+        {error}
       </div>
     );
   }
-
+  const [fetchQuote] = data;
   return (
     <div className="quote-display">
       <h2>
-        Quotes about {category}
+        Quotes about
+        {' '}
+        {category}
       </h2>
       <ul>
-        {data.map((quote, index) => (
-          <li key={index}>
-            <p>
-              {quote.quote}
-            </p>
-            <p>
-              {quote.author}
-            </p>
-          </li>
-        ))}
+        <li>
+          <p>
+            {fetchQuote.quote}
+          </p>
+          <p>
+            {fetchQuote.author}
+          </p>
+        </li>
       </ul>
     </div>
   );
 }
 
 export default Quotes;
+
+Quotes.propTypes = {
+  category: PropTypes.string,
+};
+
+Quotes.defaultProps = {
+  category: '',
+};
