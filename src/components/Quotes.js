@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
-import './Quotes.css';
 import PropTypes from 'prop-types';
 
 function Quotes({ category }) {
