@@ -3,3 +3,70 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.quote-display {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.quote-display h2 {
+  text-align: center;
+}
+
+.quote-display li {
+  text-align: right;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quote-display li p:last-child {
+  font-weight: bold;
+}
+
+.homepage {
+  padding: 2rem;
+  text-align: left;
+  background-color: #f5f5f5;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.home-paragrhap {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  justify-content: space-around;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  list-style: none;
+  height: 50px;
+}
+
+.nav-item {
+  color: black;
+  text-decoration: none;
+  margin: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
