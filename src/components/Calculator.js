@@ -17,7 +17,7 @@ function Calculator() {
 
   return (
     <div className="calculator">
-      <div className="display">
+      <div className="display" data-testid="display">
         { numbers.total }
         { numbers.operation }
         { numbers.next }
