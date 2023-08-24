@@ -5,7 +5,8 @@ import Calculator from './Calculator';
 
 describe('Calculator component', () => {
   test('renders the component without errors', () => {
-    render(<Calculator />);
+    const renderer = render(<Calculator />);
+    expect(renderer).toMatchSnapshot();
   });
 
   test('displays the initial values correctly', () => {
