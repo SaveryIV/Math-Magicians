@@ -4,6 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/jest-globals';
 import Navbar from './Navbar';
 
+
+test('renders the navbar with correct label', () => {
+  render(
+    <BrowserRouter>
+      <Navbar />
+    </BrowserRouter>,
+  );
+  const labelElement = screen.getByText('Math Magicians');
+  expect(labelElement).toBeInTheDocument();
+});
 test('renders the navbar with correct links', () => {
   render(
     <BrowserRouter>
