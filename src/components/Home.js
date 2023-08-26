@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <div className="homepage">
+    <div className="homepage" data-testid="display">
       <h1 className="home-title">Welcome to our page!</h1>
       <p className="home-paragrhap">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,

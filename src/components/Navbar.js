@@ -14,7 +14,7 @@ function Navbar() {
             <Link className="nav-item" to="/quotes">Quotes</Link>
           </li>
           <li>
-            <Link className="nav-item" to="/Calculator">Calculator</Link>
+            <Link className="nav-item" to="/calculator">Calculator</Link>
           </li>
         </ul>
       </nav>
