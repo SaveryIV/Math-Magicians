@@ -29,7 +29,7 @@
 
 # 🕹️ Math Magicians <a name="about-project"></a>
 
-This project is maked with the porpouse of show the magic behind the Maths, using React.js! 
+This project was made with the purpose of show the magic behind the Maths, using React.js! 
 
 ## 🛠 Built With <a name="built-with"></a>
 
