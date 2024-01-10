@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import axios from 'axios';
 import PropTypes from 'prop-types';
 
 function Quotes({ category }) {
@@ -10,7 +8,7 @@ function Quotes({ category }) {
 
   const apiKey = 'PR9OrpSi7kbt4/xm76yLrQ==GDPbm1EnnixMX3cm';
   useEffect(() => {
-    axios.get('https://api.api-ninjas.com/v1/quotes?category=knowledge', {
+    fetch('https://api.api-ninjas.com/v1/quotes?category=knowledge', {
       headers: { 'X-Api-Key': apiKey },
     })
       .then((response) => {
