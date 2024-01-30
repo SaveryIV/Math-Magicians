@@ -1,67 +1,59 @@
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
-function Quotes({ category }) {
-  const [data, setData] = useState([]);
-  const [loadState, setLoad] = useState(true);
+function Quotes() {
+  const [quote, setQuote] = useState({});
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const apiKey = 'PR9OrpSi7kbt4/xm76yLrQ==GDPbm1EnnixMX3cm';
   useEffect(() => {
+    const apiKey = 'PR9OrpSi7kbt4/xm76yLrQ==GDPbm1EnnixMX3cm';
+
     fetch('https://api.api-ninjas.com/v1/quotes?category=knowledge', {
       headers: { 'X-Api-Key': apiKey },
     })
+
       .then((response) => {
-        setData(response.data);
-        setLoad(false);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const randomQuote = data[Math.floor(Math.random() * data.length)];
+        setQuote(randomQuote);
+        setLoading(false);
       })
       .catch((error) => {
         setError(error.message);
-        setLoad(false);
+        setLoading(false);
       });
   }, []);
 
-  if (loadState === true) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
     return (
-      <div>
+      <div className="error">
         Error:
-        {' '}
         {error}
       </div>
     );
   }
-  const [fetchQuote] = data;
+
   return (
-    <div className="quote-display">
-      <h2>
-        Quotes about
-        {' '}
-        {category}
-      </h2>
-      <ul>
-        <li>
-          <p>
-            {fetchQuote.quote}
-          </p>
-          <p>
-            {fetchQuote.author}
-          </p>
-        </li>
-      </ul>
+    <div className="quote">
+      <h2>Educational Quote</h2>
+      <div className="quote-text">
+        <blockquote>{quote.quote}</blockquote>
+        <p>
+          -
+          {quote.author}
+        </p>
+      </div>
     </div>
   );
 }
 
 export default Quotes;
-
-Quotes.propTypes = {
-  category: PropTypes.string,
-};
-
-Quotes.defaultProps = {
-  category: '',
-};

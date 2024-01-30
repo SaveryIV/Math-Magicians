@@ -1,25 +1,43 @@
 function Home() {
   return (
     <div className="homepage" data-testid="display">
-      <h1 className="home-title">Welcome to our page!</h1>
-      <p className="home-paragrhap">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-        doloremque perferendis. Eos porro harum libero voluptatem magnam? Alias
-        voluptatem porro quas ullam. Voluptates vel ad incidunt illo ducimus
-        explicabo beatae! Ex neque distinctio, rem earum nam optio molestias.
-        Facilis odit quidem est recusandae numquam nemo totam alias voluptatem,
-        minima minus, eaque, repellat perspiciatis! Tenetur totam veniam
-        reprehenderit, dignissimos rem quia!
-      </p>
-      <p className="home-paragrhap">
-        Debitis, cumque nobis possimus reprehenderit dolorem nostrum aut odio
-        libero ipsa, consequuntur nisi vitae incidunt voluptates repellat dolor.
-        Corrupti obcaecati eveniet est pariatur eos esse animi ut explicabo
-        dicta earum. Mollitia enim dolore delectus, ipsum, esse tempora, sunt
-        commodi consectetur nobis cum at rerum praesentium asperiores nihil
-        voluptate saepe est accusamus maxime ducimus! Nemo debitis fugiat
-        provident, reprehenderit quaerat ratione.
-      </p>
+      <h2>Welcome to Math Magicians</h2>
+      <div className="home-paragrhap">
+        <ul>
+          <li>
+            <p>Where numbers meet magic, and every calculation opens a door to new possibilities!</p>
+          </li>
+          <li>
+            <p>
+              <strong>Intuitive Design:</strong>
+              {' '}
+              Dive into a world where each equation is not just solved but experienced. Our user-friendly interface makes navigating through mathematical wonders both effortless and delightful.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Explore and Unravel:</strong>
+              {' '}
+              Basic arithmetic is just the beginning. Unravel the mysteries of complex calculations, and play with advanced features like modulo operations – all at your fingertips.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Educational Quotes:</strong>
+              {' '}
+              Be inspired by our collection of thought-provoking quotes. Let the wisdom of mathematicians and philosophers fuel your curiosity and passion for numbers.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Embrace the Adventure:</strong>
+              {' '}
+              With Math Magicians, math isn&apos;t just a subject – it&apos;s an adventure. Are you ready to make math not just easy, but thrillingly fun? Let&apos;s begin!
+            </p>
+          </li>
+        </ul>
+      </div>
+
     </div>
   );
 }
